@@ -1,0 +1,92 @@
+"use client"
+
+import Link from "next/link"
+import { ChevronLeft } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import Header from "@/components/header"
+import PredictionBox from "@/components/prediction-box"
+import WinProbabilityChart from "@/components/charts/win-probability-chart"
+import PlayerPerformanceChart from "@/components/charts/player-performance-chart"
+import HeadToHeadChart from "@/components/charts/head-to-head-chart"
+import TeamStrengthsChart from "@/components/charts/team-strengths-chart"
+import PitchReport from "@/components/pitch-report"
+import { matchesData } from "@/lib/data"
+import {use} from 'react'
+
+export default function MatchDetailsPage({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = use(params)  // ✅ unwrap the promise
+  const match = matchesData.find((m) => m.id === id)
+
+  if (!match) {
+    return (
+      <div className="min-h-screen bg-background flex items-center justify-center">
+        <div className="text-center">
+          <h1 className="text-2xl font-bold text-foreground mb-4">Match not found</h1>
+          <Link href="/">
+            <Button>Back to Matches</Button>
+          </Link>
+        </div>
+      </div>
+    )
+  }
+
+  return (
+    <main className="min-h-screen bg-background">
+      <Header />
+
+      {/* Back Button */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6">
+        <Link href={`/match/${match.id}`}>
+          <Button variant="ghost" className="text-accent hover:bg-accent/10">
+            <ChevronLeft className="w-4 h-4 mr-2" />
+            Back to Match Details
+          </Button>
+        </Link>
+      </div>
+
+      {/* Prediction Header */}
+      <div className="bg-gradient-to-b from-primary/80 to-background py-8 px-4 sm:px-6 lg:px-8 border-b border-border">
+        <div className="max-w-7xl mx-auto text-center">
+          <h1 className="text-3xl sm:text-4xl font-bold text-foreground mb-2">Match Prediction & Analytics</h1>
+          <p className="text-muted-foreground">Powered by AI-driven statistical analysis</p>
+        </div>
+      </div>
+
+      {/* Main Content */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        {/* Prediction Box */}
+        <div className="mb-12 animate-slide-in-up" style={{ animationDelay: "0s" }}>
+          <PredictionBox match={match} />
+        </div>
+
+        {/* Charts Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+          {/* Win Probability */}
+          <div className="animate-slide-in-up" style={{ animationDelay: "0.1s" }}>
+            <WinProbabilityChart match={match} />
+          </div>
+
+          {/* Team Strengths */}
+          <div className="animate-slide-in-up" style={{ animationDelay: "0.2s" }}>
+            <TeamStrengthsChart match={match} />
+          </div>
+
+          {/* Player Performance */}
+          <div className="animate-slide-in-up" style={{ animationDelay: "0.3s" }}>
+            <PlayerPerformanceChart match={match} />
+          </div>
+
+          {/* Head to Head */}
+          <div className="animate-slide-in-up" style={{ animationDelay: "0.4s" }}>
+            <HeadToHeadChart match={match} />
+          </div>
+        </div>
+
+        {/* Pitch Report */}
+        <div className="animate-slide-in-up" style={{ animationDelay: "0.5s" }}>
+          <PitchReport stadium={match.stadium} />
+        </div>
+      </div>
+    </main>
+  )
+}
