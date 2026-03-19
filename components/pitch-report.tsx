@@ -13,7 +13,7 @@ export default function PitchReport({ stadium }: any) {
   }
 
   return (
-    <Card className="bg-card border-border">
+    <Card>
       <CardHeader className="bg-primary/50">
         <CardTitle className="flex items-center gap-2">
           <Cloud className="w-5 h-5 text-accent" />
@@ -55,7 +55,6 @@ export default function PitchReport({ stadium }: any) {
           ))}
         </div>
 
-        {/* Analysis */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6 pt-6 border-t border-border">
           <div>
             <p className="text-sm text-muted-foreground mb-2">Pitch Favours</p>

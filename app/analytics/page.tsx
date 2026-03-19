@@ -61,18 +61,18 @@ export default function AnalyticsPage() {
     <div className="min-h-screen bg-background">
       <Header />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="mb-12 animate-slide-in-up">
+        <div className="mb-12">
           <div className="flex items-center gap-3 mb-4">
             <div className="p-3 bg-accent/10 rounded-lg">
               <BarChart3 className="w-8 h-8 text-accent" />
             </div>
-            <h1 className="text-5xl font-bold text-foreground glow-accent">Analytics Dashboard</h1>
+            <h1 className="text-5xl font-bold text-foreground">Analytics Dashboard</h1>
           </div>
           <p className="text-lg text-muted-foreground">Real-time cricket statistics and predictive insights</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-          <Card className="bg-card border border-border hover:border-accent/50 hover:shadow-lg hover:shadow-accent/20 transition-all duration-300">
+          <Card>
             <CardHeader className="pb-3">
               <div className="flex items-center justify-between">
                 <CardTitle className="text-accent text-sm font-semibold">Prediction Accuracy</CardTitle>
@@ -85,7 +85,7 @@ export default function AnalyticsPage() {
             </CardContent>
           </Card>
 
-          <Card className="bg-card border border-border hover:border-accent/50 hover:shadow-lg hover:shadow-accent/20 transition-all duration-300">
+          <Card>
             <CardHeader className="pb-3">
               <div className="flex items-center justify-between">
                 <CardTitle className="text-accent text-sm font-semibold">Matches Analyzed</CardTitle>
@@ -98,7 +98,7 @@ export default function AnalyticsPage() {
             </CardContent>
           </Card>
 
-          <Card className="bg-card border border-border hover:border-accent/50 hover:shadow-lg hover:shadow-accent/20 transition-all duration-300">
+          <Card>
             <CardHeader className="pb-3">
               <div className="flex items-center justify-between">
                 <CardTitle className="text-accent text-sm font-semibold">Teams Tracked</CardTitle>
@@ -111,7 +111,7 @@ export default function AnalyticsPage() {
             </CardContent>
           </Card>
 
-          <Card className="bg-card border border-border hover:border-accent/50 hover:shadow-lg hover:shadow-accent/20 transition-all duration-300">
+          <Card>
             <CardHeader className="pb-3">
               <div className="flex items-center justify-between">
                 <CardTitle className="text-accent text-sm font-semibold">Win Rate</CardTitle>
@@ -126,7 +126,7 @@ export default function AnalyticsPage() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
-          <Card className="bg-card border border-border shadow-lg hover:shadow-xl hover:shadow-accent/10 transition-all duration-300 animate-slide-in-up">
+          <Card>
             <CardHeader>
               <CardTitle className="text-accent text-xl">Win Probability Distribution</CardTitle>
               <CardDescription>Last 100 matches analysis</CardDescription>
@@ -161,7 +161,7 @@ export default function AnalyticsPage() {
             </CardContent>
           </Card>
 
-          <Card className="bg-card border border-border shadow-lg hover:shadow-xl hover:shadow-accent/10 transition-all duration-300 animate-slide-in-up">
+          <Card>
             <CardHeader>
               <CardTitle className="text-accent text-xl">Team Strengths Comparison</CardTitle>
               <CardDescription>Radar analysis across metrics</CardDescription>
@@ -190,7 +190,7 @@ export default function AnalyticsPage() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
-          <Card className="bg-card border border-border shadow-lg hover:shadow-xl hover:shadow-accent/10 transition-all duration-300 animate-slide-in-up">
+          <Card>
             <CardHeader>
               <CardTitle className="text-accent text-xl">Top Players Performance</CardTitle>
               <CardDescription>Average score comparison</CardDescription>
@@ -215,7 +215,7 @@ export default function AnalyticsPage() {
             </CardContent>
           </Card>
 
-          <Card className="bg-card border border-border shadow-lg hover:shadow-xl hover:shadow-accent/10 transition-all duration-300 animate-slide-in-up">
+          <Card>
             <CardHeader>
               <CardTitle className="text-accent text-xl">Head-to-Head Historical Trend</CardTitle>
               <CardDescription>Win rate over last 7 series</CardDescription>

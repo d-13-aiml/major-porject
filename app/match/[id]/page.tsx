@@ -9,7 +9,7 @@ import StadiumInfo from "@/components/stadium-info"
 import { matchesData } from "@/lib/data"
 
 export default function MatchDetailsPage({ params }: { params: Promise<{ id: string }> }) {
-  const { id } = use(params)  // ✅ unwrap the promise
+  const { id } = use(params)
   const match = matchesData.find((m) => m.id === id)
 
   if (!match) {
@@ -48,21 +48,17 @@ export default function MatchDetailsPage({ params }: { params: Promise<{ id: str
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
-          <div className="animate-slide-in-up" style={{ animationDelay: "0s" }}>
-            <TeamColumn team={match.teamA} side="left" />
-          </div>
-          <div className="animate-slide-in-up" style={{ animationDelay: "0.1s" }}>
-            <TeamColumn team={match.teamB} side="right" />
-          </div>
+          <TeamColumn team={match.teamA} side="left" />
+          <TeamColumn team={match.teamB} side="right" />
         </div>
 
-        <div className="mb-12 animate-slide-in-up" style={{ animationDelay: "0.2s" }}>
+        <div className="mb-12">
           <StadiumInfo stadium={match.stadium} />
         </div>
 
-        <div className="flex justify-center animate-slide-in-up" style={{ animationDelay: "0.3s" }}>
+        <div className="flex justify-center">
           <Link href={`/prediction/${match.id}`}>
-            <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 text-lg px-8 animate-glow-pulse">
+            <Button size="lg" className="text-lg px-8">
               Predict Result →
             </Button>
           </Link>

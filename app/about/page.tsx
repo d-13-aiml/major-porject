@@ -2,6 +2,7 @@
 
 import Header from "@/components/header"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Separator } from "@/components/ui/separator"
 import { BarChart3, TrendingUp, Zap, Users, Shield, Lightbulb, CheckCircle2, Rocket } from "lucide-react"
 
 export default function AboutPage() {
@@ -57,12 +58,12 @@ export default function AboutPage() {
     <div className="min-h-screen bg-background">
       <Header />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="mb-16 animate-slide-in-up">
+        <div className="mb-16">
           <div className="flex items-center gap-3 mb-6">
             <div className="p-3 bg-accent/10 rounded-lg">
-              <Rocket className="w-8 h-8 text-accent animate-glow-pulse" />
+              <Rocket className="w-8 h-8 text-accent" />
             </div>
-            <h1 className="text-5xl sm:text-6xl font-bold text-foreground glow-accent">About CrickPredict Pro</h1>
+            <h1 className="text-5xl sm:text-6xl font-bold text-foreground">About CrickPredict Pro</h1>
           </div>
           <p className="text-xl text-muted-foreground max-w-3xl leading-relaxed">
             CrickPredict Pro is a cutting-edge cricket match prediction platform that combines advanced AI algorithms
@@ -75,14 +76,10 @@ export default function AboutPage() {
           {features.map((feature, index) => {
             const Icon = feature.icon
             return (
-              <Card
-                key={index}
-                className="bg-card border border-border hover:border-accent/50 hover:shadow-xl hover:shadow-accent/20 transition-all duration-300 group animate-slide-in-up"
-                style={{ animationDelay: `${index * 50}ms` }}
-              >
+              <Card key={index}>
                 <CardHeader>
-                  <div className="mb-4 p-3 bg-accent/10 rounded-lg w-fit group-hover:bg-accent/20 transition-colors duration-300">
-                    <Icon className="w-7 h-7 text-accent group-hover:animate-glow-pulse" />
+                  <div className="mb-4 p-3 bg-accent/10 rounded-lg w-fit">
+                    <Icon className="w-7 h-7 text-accent" />
                   </div>
                   <CardTitle className="text-accent text-lg">{feature.title}</CardTitle>
                 </CardHeader>
@@ -97,10 +94,10 @@ export default function AboutPage() {
         </div>
 
         <div className="grid md:grid-cols-2 gap-8 mb-16">
-          <Card className="bg-card border border-border shadow-lg hover:shadow-xl hover:shadow-accent/10 transition-all duration-300 animate-slide-in-up">
+          <Card>
             <CardHeader className="pb-6">
               <div className="flex items-center gap-3 mb-2">
-                <div className="w-1 h-10 bg-accent rounded"></div>
+                <Separator orientation="vertical" className="w-1 h-10 bg-accent" />
                 <CardTitle className="text-accent text-2xl">Our Mission</CardTitle>
               </div>
             </CardHeader>
@@ -115,10 +112,10 @@ export default function AboutPage() {
             </CardContent>
           </Card>
 
-          <Card className="bg-gradient-to-br from-accent/10 to-primary border border-accent/30 shadow-lg hover:shadow-xl hover:shadow-accent/20 transition-all duration-300 animate-slide-in-up">
+          <Card className="bg-gradient-to-br from-accent/10 to-primary border-accent/30">
             <CardHeader className="pb-6">
               <div className="flex items-center gap-3 mb-2">
-                <div className="w-1 h-10 bg-accent rounded"></div>
+                <Separator orientation="vertical" className="w-1 h-10 bg-accent" />
                 <CardTitle className="text-accent text-2xl">Why Choose Us?</CardTitle>
               </div>
             </CardHeader>
@@ -135,28 +132,28 @@ export default function AboutPage() {
           </Card>
         </div>
 
-        <Card className="bg-card border border-border shadow-lg animate-slide-in-up">
+        <Card>
           <CardHeader className="pb-6">
             <div className="flex items-center gap-3">
-              <div className="w-1 h-10 bg-accent rounded"></div>
+              <Separator orientation="vertical" className="w-1 h-10 bg-accent" />
               <CardTitle className="text-accent text-2xl">Platform Statistics</CardTitle>
             </div>
           </CardHeader>
           <CardContent>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              <div className="text-center p-4 bg-primary/50 rounded-lg hover:bg-primary/70 transition-colors duration-300">
+              <div className="text-center p-4 bg-primary/50 rounded-lg">
                 <div className="text-3xl sm:text-4xl font-black text-accent mb-2">2,847+</div>
                 <p className="text-sm text-muted-foreground">Matches Analyzed</p>
               </div>
-              <div className="text-center p-4 bg-primary/50 rounded-lg hover:bg-primary/70 transition-colors duration-300">
+              <div className="text-center p-4 bg-primary/50 rounded-lg">
                 <div className="text-3xl sm:text-4xl font-black text-accent mb-2">24</div>
                 <p className="text-sm text-muted-foreground">Teams Tracked</p>
               </div>
-              <div className="text-center p-4 bg-primary/50 rounded-lg hover:bg-primary/70 transition-colors duration-300">
+              <div className="text-center p-4 bg-primary/50 rounded-lg">
                 <div className="text-3xl sm:text-4xl font-black text-accent mb-2">68.5%</div>
                 <p className="text-sm text-muted-foreground">Accuracy Rate</p>
               </div>
-              <div className="text-center p-4 bg-primary/50 rounded-lg hover:bg-primary/70 transition-colors duration-300">
+              <div className="text-center p-4 bg-primary/50 rounded-lg">
                 <div className="text-3xl sm:text-4xl font-black text-accent mb-2">100%</div>
                 <p className="text-sm text-muted-foreground">Verified Data</p>
               </div>

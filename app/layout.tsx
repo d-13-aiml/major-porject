@@ -1,11 +1,12 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Geist, Geist_Mono } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
+import { GeistSans } from "geist/font/sans"
 import "./globals.css"
+import { Geist } from "next/font/google";
+import { cn } from "@/lib/utils";
 
-const _geist = Geist({ subsets: ["latin"] })
-const _geistMono = Geist_Mono({ subsets: ["latin"] })
+const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
 export const metadata: Metadata = {
   title: "CrickPredict Pro - Cricket Match Predictions",
@@ -36,8 +37,8 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className="dark">
-      <body className={`font-sans antialiased`}>
+    <html lang="en" className={cn("dark", "font-sans", geist.variable)}>
+      <body className={`${GeistSans.className} tracking-tighter antialiased`}>
         {children}
         <Analytics />
       </body>
